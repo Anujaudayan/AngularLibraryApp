@@ -1,0 +1,16 @@
+.delete-container
+{
+    max-height: 1900 px;
+    background-color: #80DEEA;
+    /* background-image: url('../assets/images/summer-nature-wallpaper-3_edited.png'); */
+}
+
+.delete-img-height
+{
+    max-height: 25 rem;
+}
+
+.delete-row
+{
+    background-color: #a7e8f1;
+}

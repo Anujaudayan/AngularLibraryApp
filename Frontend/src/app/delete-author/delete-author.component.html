@@ -1,0 +1,39 @@
+<br>
+    <div class="row delete-container P-2 h-100 rounded"  >
+      <div class="col-lg-4"></div>
+      <!-- sign in form -->
+      <div class="col-lg-4  p-4 m-3 delete-row rounded">
+        <form class="row g-3"  (ngSubmit)="DeleteAuthor()" >   
+            <span id="deleteAlertMsg"></span> 
+            <div class="col-md-12">
+                <label for="deleteName" class="form-label">Name</label>
+               <input type="text" class="form-control" name="b_title" id="deleteTitle"  [(ngModel)]="AuthorItem.authorname" readonly> 
+            </div>
+
+            <div class="col-md-12">
+                <label for="deletenationality" class="form-label">Nationality</label>
+                <input type="text" class="form-control" name="b_author"  id="deleteNatinality" placeholder="Enter the Nationality"  [(ngModel)]="AuthorItem.nationality" readonly>
+            </div>
+            <div class="col-md-12">
+                <label for="deleteworks" class="form-label">Works</label>
+                <input type="text" class="form-control" name="b_genre" id="deleteGenre" placeholder="Enter the Works"  [(ngModel)]="AuthorItem.works" readonly>
+            </div>
+            <div class="col-md-12">
+                <label for="deleteDesc" class="form-label">Career</label>
+                <span id="deleteDescSpan"></span>
+                <textarea class="form-control" id="deleteDesc" name="b_desc" rows="3"  [(ngModel)]="AuthorItem.career"></textarea>
+            </div>
+            <div class=" col-md-12 ">
+              <label for="PreviewAuthorImage" class="form-label  ">Image Preview&nbsp;</label><br>
+              <span id="PreviewAuthorImage"></span>
+              <img class="form-control" src="assets/images/{{AuthorItem.image}}" style="width: 20em; height: 10em;" >
+            </div> 
+            <div class="form-group col-md-11  p-3 text-center">
+                <label for="UserConfirmation" class="form-label deletePage-label " style="color: #311B92;">Do you want to Delete this Author?&nbsp;</label> <br> 
+                <button type="submit" class="btn btn-success " >Yes</button> &nbsp;
+                <a href="/authors" id="cancel" name="cancel" class="btn btn-danger ">No</a>
+            </div>
+        </form> 
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
