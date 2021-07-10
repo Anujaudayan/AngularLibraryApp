@@ -1,0 +1,67 @@
+<br>
+    <div class="row edit-container P-2 h-100 rounded"  >
+      <div class="col-lg-4"></div>
+      <!-- sign in form -->
+      <div class="col-lg-4  p-4 m-3 edit-row rounded">
+        <form class="row g-3" novalidate #editAuthorForm="ngForm" (ngSubmit)="editAuthorForm.form.valid && EditAuthor()" >   
+            <span id="editAlertMsg"></span> 
+            <div class="col-md-12">
+                <label for="editName" class="form-label">Name</label><label class="form-label text-danger">&nbsp;* </label>
+                <span *ngIf="(name.invalid && (name.dirty || name.touched|| submitted))" class='balloonError'>
+                    <div *ngIf="name.errors?.required" >
+                        <p>Author name is required</p>
+                      </div>
+                      <div *ngIf="name.errors?.minlength">
+                        <p>Title must be at least 4 characters long.</p>
+                      </div>
+                </span>
+               <input type="text" class="form-control" name="b_title" id="editTitle" #name="ngModel"  placeholder="Enter the Author Name" minlength="4" [(ngModel)]="AuthorItem.authorname" required> 
+            </div>
+
+            <div class="col-md-12">
+                <label for="editnationality" class="form-label">Nationality</label><label class="form-label text-danger">&nbsp;* </label>
+                <span *ngIf="(nationality.invalid && (nationality.dirty || nationality.touched|| submitted))" class='balloonError'>
+                    <div *ngIf="nationality.errors?.required" >
+                        <p>Nationality is required</p>
+                      </div>
+                      <div *ngIf="nationality.errors?.minlength">
+                        <p>Author must be at least 4 characters long.</p>
+                      </div>
+                </span>
+                <input type="text" class="form-control" name="b_author"  id="editNatinality" placeholder="Enter the Nationality" minlength="4" #nationality="ngModel" [(ngModel)]="AuthorItem.nationality" required>
+            </div>
+            <div class="col-md-12">
+                <label for="editworks" class="form-label">Works</label><label class="form-label text-danger">&nbsp;* </label>
+                <span *ngIf="(works.invalid && (works.dirty || works.touched|| submitted))" class='balloonError'>
+                    <div *ngIf="works.errors?.required" >
+                        <p>Works is required</p>
+                      </div>
+                      <div *ngIf="works.errors?.minlength">
+                        <p>Genre must be at least 4 characters long.</p>
+                      </div>
+                </span>
+                <input type="text" class="form-control" name="b_genre" id="editGenre" placeholder="Enter the Works" minlength="4" #works="ngModel"  [(ngModel)]="AuthorItem.works" required>
+            </div>
+            <div class="col-md-12">
+                <label for="editDesc" class="form-label">Career</label>
+                <span id="editDescSpan"></span>
+                <textarea class="form-control" id="editDesc" name="b_desc" rows="3"  [(ngModel)]="AuthorItem.career"></textarea>
+            </div>
+            <div class="col-md-12">
+                <label for="editImage" class="form-label">Image</label>
+                <input type="file" class="form-control" id="editAuthorImage" (change)="selectImage($event)" name="b_image" [(ngModel)]="AuthorItem.image" #image="ngModel"/>
+            </div>
+            <div class=" col-md-12 ">
+              <label for="PreviewAuthorImage" class="form-label  ">Image Preview&nbsp;</label><br>
+              <span id="PreviewAuthorImage"></span>
+              <img class="form-control" src="assets/images/{{imgPrev}}" style="width: 20em; height: 10em;" >
+            </div> 
+            <div class="form-group col-md-11  p-3 text-center">
+                <label for="UserConfirmation" class="form-label EditPage-label " style="color: #311B92;">Do you want to Update this Author?&nbsp;</label> <br> 
+                <button type="submit" class="btn btn-success " (mousedown)="submitted=true">Yes</button> &nbsp;
+                <a href="/authors" id="cancel" name="cancel" class="btn btn-danger ">No</a>
+            </div>
+        </form> 
+      </div>
+      <div class="col-lg-2"></div>
+    </div>

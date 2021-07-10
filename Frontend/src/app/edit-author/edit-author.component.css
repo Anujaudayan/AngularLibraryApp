@@ -1,0 +1,43 @@
+.edit-container
+{
+    max-height: 1900 px;
+    background-color: #80DEEA;
+    /* background-image: url('../assets/images/summer-nature-wallpaper-3_edited.png'); */
+}
+
+.edit-img-height
+{
+    max-height: 25 rem;
+}
+
+.edit-row
+{
+    background-color: #a7e8f1;
+}
+
+.balloonError {
+    display: table;
+    position: relative;
+    background-color: #F8E0E0;
+    color: #DF0101;
+    border: 2px solid #DF0101;
+    padding: 0 0.5em;
+    border-radius: 4px;
+    margin-bottom: 9px;
+  }
+  .balloonError::before, .balloon::after {
+    position: absolute;
+    content: "";
+    border: 10px solid transparent;
+    border-bottom-width: 0;
+    left: 30px;
+  }
+  .balloonError:before {
+    border-top-color: #DF0101;
+    top: 45px;
+  }
+  .balloonError:after {
+    border-top-color: #fff;
+    top: 25px;
+    z-index: 1;
+  }
